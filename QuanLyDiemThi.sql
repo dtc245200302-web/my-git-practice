@@ -12,7 +12,7 @@ CREATE TABLE Class(
     Status BIT
 );
 
--- Bước 4: Tạo bảng Student (có khóa ngoại tham chiếu đến Class)
+-- Bước 4: Tạo bảng Student
 CREATE TABLE Student(
     StudentId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     StudentName VARCHAR(30) NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE Subject(
     Status BIT DEFAULT 1
 );
 
--- Bước 6: Tạo bảng Mark (có khóa ngoại tham chiếu đến Subject và Student)
+-- Bước 6: Tạo bảng Mark
 CREATE TABLE Mark(
     MarkId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     SubId INT NOT NULL,
