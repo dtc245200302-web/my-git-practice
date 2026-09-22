@@ -1,44 +1,44 @@
 -- Bước 1: Tạo cơ sở dữ liệu
-CREATE DATABASE QuanLyDiemThi;
+CREATE DATABASE QuanLySinhVien;
 
 -- Bước 2: Chọn Database để thao tác
-USE QuanLyDiemThi;
+USE QuanLySinhVien;
 
--- Bước 3: Tạo bảng HocSinh
-CREATE TABLE HocSinh(
-    MaHS VARCHAR(20) PRIMARY KEY,
-    TenHS VARCHAR(50),
-    NgaySinh DATETIME,
-    Lop VARCHAR(20),
-    GT VARCHAR(20)
+-- Bước 3: Tạo bảng Class
+CREATE TABLE Class(
+    ClassID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    ClassName VARCHAR(60) NOT NULL,
+    StartDate DATETIME NOT NULL,
+    Status BIT
 );
 
--- Bước 4: Tạo bảng MonHoc (tạm thời chưa có khóa ngoại)
-CREATE TABLE MonHoc(
-    MaMH VARCHAR(20) PRIMARY KEY,
-    TenMH VARCHAR(50),
-    MaGV VARCHAR(20)
+-- Bước 4: Tạo bảng Student (có khóa ngoại tham chiếu đến Class)
+CREATE TABLE Student(
+    StudentId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    StudentName VARCHAR(30) NOT NULL,
+    Address VARCHAR(50),
+    Phone VARCHAR(20),
+    Status BIT,
+    ClassId INT NOT NULL,
+    FOREIGN KEY (ClassId) REFERENCES Class (ClassID)
 );
 
--- Bước 5: Tạo bảng BangDiem (bảng trung gian N-N)
-CREATE TABLE BangDiem(
-    MaHS VARCHAR(20),
-    MaMH VARCHAR(20),
-    DiemThi INT,
-    NgayKT DATETIME,
-    PRIMARY KEY (MaHS, MaMH),
-    FOREIGN KEY (MaHS) REFERENCES HocSinh(MaHS),
-    FOREIGN KEY (MaMH) REFERENCES MonHoc(MaMH)
+-- Bước 5: Tạo bảng Subject
+CREATE TABLE Subject(
+    SubId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    SubName VARCHAR(30) NOT NULL,
+    Credit TINYINT NOT NULL DEFAULT 1 CHECK ( Credit >= 1 ),
+    Status BIT DEFAULT 1
 );
 
--- Bước 6: Tạo bảng GiaoVien
-CREATE TABLE GiaoVien(
-    MaGV VARCHAR(20) PRIMARY KEY,
-    TenGV VARCHAR(20),
-    SDT VARCHAR(10)
+-- Bước 6: Tạo bảng Mark (có khóa ngoại tham chiếu đến Subject và Student)
+CREATE TABLE Mark(
+    MarkId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    SubId INT NOT NULL,
+    StudentId INT NOT NULL,
+    Mark FLOAT DEFAULT 0 CHECK ( Mark BETWEEN 0 AND 100),
+    ExamTimes TINYINT DEFAULT 1,
+    UNIQUE (SubId, StudentId),
+    FOREIGN KEY (SubId) REFERENCES Subject (SubId),
+    FOREIGN KEY (StudentId) REFERENCES Student (StudentId)
 );
-
--- Bước 7: Thêm khóa ngoại cho bảng MonHoc tham chiếu đến GiaoVien
-ALTER TABLE MonHoc 
-ADD CONSTRAINT FK_MaGV 
-FOREIGN KEY (MaGV) REFERENCES GiaoVien(MaGV);
