@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập định dạng văn bản với CSS</title>
+    
+    <style>
+        /* ===== ĐỊNH DẠNG CHUNG ===== */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* ===== TIÊU ĐỀ CHÍNH ===== */
+        h1 {
+            text-align: center;           /* Căn giữa tiêu đề */
+            color: #2c3e50;               /* Màu chữ xanh đậm */
+            font-size: 32px;              /* Cỡ chữ lớn */
+            text-transform: uppercase;    /* Chuyển thành chữ in hoa */
+            letter-spacing: 2px;          /* Khoảng cách giữa các chữ cái */
+        }
+
+        /* ===== TIÊU ĐỀ PHỤ ===== */
+        h2 {
+            color: #3498db;               /* Màu xanh dương */
+            font-size: 24px;
+            border-bottom: 2px solid #3498db;  /* Gạch chân */
+            padding-bottom: 8px;
+        }
+
+        /* ===== ĐOẠN VĂN BẢN ===== */
+        p {
+            font-size: 16px;              /* Cỡ chữ */
+            color: #333;                  /* Màu chữ xám đậm */
+            text-align: justify;          /* Căn đều 2 bên */
+            text-indent: 30px;            /* Thụt đầu dòng */
+            line-height: 1.8;             /* Giãn dòng */
+        }
+
+        /* ===== ĐOẠN VĂN BẢN ĐẶC BIỆT ===== */
+        .highlight {
+            color: #e74c3c;               /* Màu đỏ nổi bật */
+            font-weight: bold;            /* In đậm */
+            font-style: italic;           /* In nghiêng */
+        }
+
+        /* ===== ĐOẠN VĂN BẢN CĂN PHẢI ===== */
+        .text-right {
+            text-align: right;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        /* ===== ĐOẠN VĂN BẢN CĂN GIỮA ===== */
+        .text-center {
+            text-align: center;
+            color: #27ae60;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* ===== CHỮ GẠCH NGANG / GẠCH CHÂN ===== */
+        .underline {
+            text-decoration: underline;   /* Gạch chân */
+            color: #8e44ad;
+        }
+
+        .line-through {
+            text-decoration: line-through; /* Gạch ngang */
+            color: #95a5a6;
+        }
+
+        /* ===== CHỮ HOA / CHỮ THƯỜNG ===== */
+        .uppercase {
+            text-transform: uppercase;    /* In hoa */
+            color: #d35400;
+        }
+
+        .lowercase {
+            text-transform: lowercase;    /* In thường */
+            color: #16a085;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TIÊU ĐỀ CHÍNH -->
+    <h1>Định dạng văn bản với CSS</h1>
+
+    <!-- TIÊU ĐỀ PHỤ -->
+    <h2>1. Căn chỉnh văn bản (text-align)</h2>
+    
+    <p>
+        Đây là đoạn văn bản được căn đều hai bên bằng thuộc tính 
+        <span class="highlight">text-align: justify</span>. 
+        Thuộc tính này giúp văn bản trông gọn gàng và chuyên nghiệp hơn, 
+        đặc biệt phù hợp với các bài báo, tài liệu dài.
+    </p>
+
+    <p class="text-right">
+        Đoạn văn bản này được căn phải (text-align: right).
+    </p>
+
+    <p class="text-center">
+        Đoạn văn bản này được căn giữa (text-align: center).
+    </p>
+
+    <!-- TIÊU ĐỀ PHỤ -->
+    <h2>2. Thụt đầu dòng (text-indent)</h2>
+    
+    <p>
+        Đoạn văn bản này sử dụng thuộc tính 
+        <span class="highlight">text-indent: 30px</span> 
+        để thụt đầu dòng giống như trong sách giáo khoa. 
+        Đây là cách trình bày quen thuộc trong văn bản tiếng Việt.
+    </p>
+
+    <!-- TIÊU ĐỀ PHỤ -->
+    <h2>3. Định dạng chữ (text-decoration, text-transform)</h2>
+    
+    <p>
+        Đây là chữ <span class="underline">gạch chân</span>, 
+        đây là chữ <span class="line-through">gạch ngang</span>, 
+        đây là chữ <span class="uppercase">in hoa</span>, 
+        và đây là chữ <span class="lowercase">IN THƯỜNG</span>.
+    </p>
+
+    <!-- TIÊU ĐỀ PHỤ -->
+    <h2>4. Màu sắc và cỡ chữ (color, font-size)</h2>
+    
+    <p>
+        Văn bản có thể được tô màu bằng thuộc tính 
+        <span class="highlight">color</span> và thay đổi kích thước 
+        bằng <span class="highlight">font-size</span>. 
+        Kết hợp nhiều thuộc tính sẽ tạo ra văn bản sinh động và dễ đọc.
+    </p>
+
+    <p class="text-center">
+        — Hết —
+    </p>
+
+</body>
+</html>
