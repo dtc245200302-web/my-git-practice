@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <title>Customer Survey</title>
+        <style>
+            body {
+                font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+                background-color: #f0f4f8;
+                margin: 20px;
+                color: #2c3e50;
+            }
+
+            form {
+                max-width: 620px;
+                margin: 0 auto;
+                background-color: #ffffff;
+                padding: 30px 35px;
+                border-radius: 8px;
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            }
+
+            h1 {
+                font-size: 24px;
+                color: #1a4f8a;
+                margin-bottom: 5px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+                color: #777;
+                margin-bottom: 25px;
+            }
+
+            label.field-label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                margin-top: 15px;
+                color: #34495e;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            select,
+            textarea {
+                width: 100%;
+                padding: 8px 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-family: inherit;
+                font-size: 14px;
+            }
+
+            textarea {
+                resize: vertical;
+                min-height: 80px;
+            }
+
+            .radio-group,
+            .checkbox-group {
+                margin-top: 5px;
+            }
+
+            .radio-group label,
+            .checkbox-group label {
+                display: block;
+                font-weight: normal;
+                margin-bottom: 5px;
+                color: #2c3e50;
+            }
+
+            .required {
+                color: red;
+            }
+
+            .btn-group {
+                margin-top: 25px;
+                text-align: center;
+            }
+
+            input[type="submit"],
+            input[type="reset"] {
+                padding: 10px 28px;
+                margin: 0 8px;
+                font-size: 15px;
+                font-weight: bold;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            input[type="submit"] {
+                background-color: #1a4f8a;
+                color: white;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #143c69;
+            }
+
+            input[type="reset"] {
+                background-color: #bdc3c7;
+                color: #2c3e50;
+            }
+
+            input[type="reset"]:hover {
+                background-color: #95a5a6;
+            }
+        </style>
+    </head>
+    <body>
+        <form method="POST" action="#">
+            <h1>Customer Survey</h1>
+            <p class="subtitle">Cảm ơn bạn đã dành thời gian tham gia khảo sát của chúng tôi!</p>
+
+            <!-- Họ và tên -->
+            <label class="field-label" for="fullname">Họ và tên <span class="required">*</span></label>
+            <input type="text" id="fullname" name="fullname" placeholder="Nguyễn Văn A" required/>
+
+            <!-- Email -->
+            <label class="field-label" for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="email@example.com" required/>
+
+            <!-- Số điện thoại -->
+            <label class="field-label" for="phone">Số điện thoại</label>
+            <input type="tel" id="phone" name="phone" placeholder="0123456789"/>
+
+            <!-- Độ tuổi -->
+            <label class="field-label" for="age">Độ tuổi</label>
+            <select id="age" name="age">
+                <option value="">-- Chọn độ tuổi --</option>
+                <option value="under18">Dưới 18</option>
+                <option value="18-25">18 - 25</option>
+                <option value="26-35">26 - 35</option>
+                <option value="36-50">36 - 50</option>
+                <option value="over50">Trên 50</option>
+            </select>
+
+            <!-- Giới tính -->
+            <label class="field-label">Giới tính</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="male" checked/> Nam</label>
+                <label><input type="radio" name="gender" value="female"/> Nữ</label>
+                <label><input type="radio" name="gender" value="other"/> Khác</label>
+            </div>
+
+            <!-- Mức độ hài lòng -->
+            <label class="field-label">Mức độ hài lòng với sản phẩm/dịch vụ</label>
+            <div class="radio-group">
+                <label><input type="radio" name="satisfaction" value="very_satisfied"/> Rất hài lòng</label>
+                <label><input type="radio" name="satisfaction" value="satisfied" checked/> Hài lòng</label>
+                <label><input type="radio" name="satisfaction" value="neutral"/> Bình thường</label>
+                <label><input type="radio" name="satisfaction" value="unsatisfied"/> Không hài lòng</label>
+                <label><input type="radio" name="satisfaction" value="very_unsatisfied"/> Rất không hài lòng</label>
+            </div>
+
+            <!-- Bạn biết đến chúng tôi qua đâu? -->
+            <label class="field-label">Bạn biết đến chúng tôi qua đâu?</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="source" value="friend"/> Bạn bè / Người thân</label>
+                <label><input type="checkbox" name="source" value="facebook"/> Facebook</label>
+                <label><input type="checkbox" name="source" value="google"/> Google</label>
+                <label><input type="checkbox" name="source" value="youtube"/> YouTube</label>
+                <label><input type="checkbox" name="source" value="other"/> Khác</label>
+            </div>
+
+            <!-- Sản phẩm đã sử dụng -->
+            <label class="field-label" for="product">Sản phẩm/dịch vụ bạn đã sử dụng</label>
+            <select id="product" name="product">
+                <option value="">-- Chọn sản phẩm --</option>
+                <option value="product_a">Sản phẩm A</option>
+                <option value="product_b">Sản phẩm B</option>
+                <option value="product_c">Sản phẩm C</option>
+                <option value="service_x">Dịch vụ X</option>
+                <option value="service_y">Dịch vụ Y</option>
+            </select>
+
+            <!-- Góp ý -->
+            <label class="field-label" for="feedback">Góp ý của bạn</label>
+            <textarea id="feedback" name="feedback" placeholder="Hãy chia sẻ cảm nhận hoặc góp ý của bạn..."></textarea>
+
+            <!-- Nút Submit và Reset -->
+            <div class="btn-group">
+                <input type="submit" value="Gửi khảo sát"/>
+                <input type="reset" value="Nhập lại"/>
+            </div>
+        </form>
+    </body>
+</html>
