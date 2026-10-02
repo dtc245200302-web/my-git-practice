@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng Boxmodel</title>
+    <style>
+        /* Bước 2: Định dạng thẻ div với class boxmodel */
+        .boxmodel {
+            margin: 0 auto;          /* Căn giữa div theo chiều ngang */
+            width: 800px;            /* Chiều rộng của div */
+            border: 10px;            /* Độ dày viền */
+            padding: 10px;           /* Khoảng cách từ nội dung đến viền */
+            border-color: chartreuse aqua blue blueviolet; /* Màu viền theo chiều kim đồng hồ: trên - phải - dưới - trái */
+            border-style: solid;     /* Kiểu viền nét liền */
+        }
+
+        /* Bước 3: Định dạng các thẻ p bên trong .boxmodel */
+        .boxmodel p {
+            border: 3px dotted darkred;  /* Viền nét đứt màu đỏ sẫm */
+            padding: 10px;               /* Khoảng đệm bên trong thẻ p */
+        }
+
+        /* Bước 4: Định dạng riêng từng thẻ p bằng id */
+        #boxmodel1 {
+            margin-bottom: 20px;   /* Lề dưới 20px */
+        }
+        #boxmodel2 {
+            margin-bottom: 40px;   /* Lề dưới 40px */
+        }
+        #boxmodel3 {
+            margin-bottom: 60px;   /* Lề dưới 60px */
+        }
+    </style>
+</head>
+<body>
+    <div class="boxmodel">
+        <p id="boxmodel1">Mô hình hộp trong CSS về cơ bản là một hộp bao quanh phần tử HTML.
+            Nó bao gồm: lề (margin), viền (border), phần đệm (padding) và nội dung (content)</p>
+        <p id="boxmodel2">Mô hình hộp trong CSS về cơ bản là một hộp bao quanh phần tử HTML.
+            Nó bao gồm: lề (margin), viền (border), phần đệm (padding) và nội dung (content)</p>
+        <p id="boxmodel3">Mô hình hộp trong CSS về cơ bản là một hộp bao quanh phần tử HTML.
+            Nó bao gồm: lề (margin), viền (border), phần đệm (padding) và nội dung (content)</p>
+    </div>
+</body>
+</html>
