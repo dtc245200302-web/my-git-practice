@@ -1,0 +1,70 @@
+/* =========================================
+   RESET VÀ THIẾT LẬP CHUNG
+   ========================================= */
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7fafc;
+}
+
+/* =========================================
+   BỐ CỤC LƯỚI SẢN PHẨM VỚI FLEXBOX
+   ========================================= */
+.product-grid {
+  display: flex;        /* Kích hoạt Flexbox */
+  flex-wrap: wrap;      /* Cho phép các thẻ tự động xuống dòng */
+  gap: 20px;            /* Khoảng cách giữa các thẻ */
+  padding: 20px;
+}
+
+/* =========================================
+   ĐỊNH DẠNG THẺ SẢN PHẨM
+   ========================================= */
+.product-card {
+  /* 
+    flex: 1 1 calc(25% - 20px);
+    - flex-grow: 1  -> Cho phép thẻ giãn ra nếu còn chỗ trống
+    - flex-shrink: 1 -> Cho phép thẻ co lại nếu thiếu chỗ
+    - flex-basis: calc(25% - 20px) -> Kích thước cơ sở là 25% trừ đi khoảng gap
+      (Vì có 4 thẻ, mỗi thẻ chiếm 25% trừ đi 1 phần của gap 20px)
+  */
+  flex: 1 1 calc(25% - 20px);
+  
+  /* Đảm bảo thẻ không bị co lại quá nhỏ trên màn hình mobile */
+  min-width: 220px;
+  
+  /* Trang trí */
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  
+  /* Hiệu ứng chuyển động mượt mà */
+  transition: transform 0.2s ease;
+}
+
+/* Hiệu ứng hover cho thẻ sản phẩm */
+.product-card:hover {
+  transform: translateY(-4px); /* Nhấc thẻ lên 4px khi di chuột */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Tăng bóng đổ */
+}
+
+.product-card h4 {
+  margin: 0 0 10px 0;
+  color: #2d3748;
+}
+
+.product-card .price {
+  margin: 0;
+  color: #e53e3e; /* Màu đỏ nổi bật cho giá */
+  font-weight: bold;
+}
