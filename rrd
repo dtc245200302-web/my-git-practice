@@ -1,0 +1,311 @@
+html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetricsHub Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========== NAVBAR — FLEXBOX ========== -->
+    <nav class="main-navbar">
+        <div class="nav-logo">MetricsHub</div>
+        <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">VeryLongGermanWordForDashboard</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="nav-profile">Profile</div>
+    </nav>
+
+    <!-- ========== DASHBOARD — CSS GRID (BENTO) ========== -->
+    <section class="dashboard">
+        <div class="widget widget-large">
+            <h3>Chart A</h3>
+            <p>Doanh thu tổng quan (span 2×2)</p>
+        </div>
+        <div class="widget">
+            <h3>Chart B</h3>
+            <p>Người dùng mới</p>
+        </div>
+        <div class="widget">
+            <h3>Chart C</h3>
+            <p>Tỉ lệ chuyển đổi</p>
+        </div>
+        <div class="widget">
+            <h3>Chart D</h3>
+            <p>Thời gian trên trang</p>
+        </div>
+    </section>
+
+    <!-- ========== PRICING — BOOTSTRAP 12 CỘT ========== -->
+    <section class="pricing container my-5">
+        <h2 class="text-center mb-4">Bảng giá</h2>
+        <div class="row g-4">
+            <div class="col-12 col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Gói Cơ bản</h5>
+                        <p class="card-text">199.000đ / tháng</p>
+                        <a href="#" class="btn btn-outline-primary">Chọn gói</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Gói Nâng cao</h5>
+                        <p class="card-text">499.000đ / tháng</p>
+                        <a href="#" class="btn btn-primary">Chọn gói</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Gói Doanh nghiệp</h5>
+                        <p class="card-text">Liên hệ</p>
+                        <a href="#" class="btn btn-outline-primary">Chọn gói</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+style.css
+css
+/* ========== RESET CƠ BẢN ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #f5f7fa;
+    color: #1f2937;
+}
+
+/* ========== 1. NAVBAR — FLEXBOX ========== */
+.main-navbar {
+    display: flex;
+    justify-content: space-between;  /* 3 nhóm trải đều */
+    align-items: center;
+    flex-wrap: wrap;                 /* cho phép rớt dòng trên mobile */
+    gap: 1rem;
+    background: #1e293b;
+    color: white;
+    padding: 15px 24px;
+}
+
+.nav-logo {
+    font-weight: bold;
+    font-size: 1.25rem;
+    flex-shrink: 0;                  /* Logo không bị co lại */
+}
+
+.nav-menu {
+    display: flex;                   /* menu con cũng là flex */
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    list-style: none;
+    flex: 1;                         /* chiếm khoảng trống ở giữa */
+    justify-content: center;         /* căn giữa các mục menu */
+}
+
+.nav-menu a {
+    color: #cbd5e1;
+    text-decoration: none;
+    white-space: nowrap;             /* không ngắt chữ giữa từ */
+}
+
+.nav-menu a:hover {
+    color: white;
+}
+
+.nav-profile {
+    flex-shrink: 0;
+}
+
+/* ========== 2. DASHBOARD — CSS GRID ========== */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 160px;           /* chiều cao mỗi hàng cơ sở */
+    gap: 16px;
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.widget {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+
+    /* Kết hợp Flexbox để căn giữa nội dung bên trong widget */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.widget-large {
+    grid-column: span 2;             /* chiếm 2 cột */
+    grid-row: span 2;                /* chiếm 2 hàng — KHÔNG cần fix height! */
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+}
+
+/* ========== 3. PRICING — BOOTSTRAP ========== */
+/* Không cần viết CSS thuần — Bootstrap lo hết! */
+/* Chỉ thêm vài tinh chỉnh nhỏ nếu muốn */
+
+.card {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* ========== 4. RESPONSIVE — MEDIA QUERIES ========== */
+
+/* Tablet: dashboard về 2 cột */
+@media (max-width: 992px) {
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: dashboard về 1 cột, widget-large trở về bình thường */
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+    .widget-large {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .nav-menu {
+        justify-content: flex-start; /* menu dồn về trái khi wrap */
+    }
+}
+Giải thích những điểm "ăn điểm"
+1. Navbar — Flexbox thuần, không fix pixel
+css
+justify-content: space-between;  /* đẩy 3 nhóm ra 3 vị trí */
+flex-wrap: wrap;                 /* cho phép rớt dòng */
+gap: 1rem;                       /* khoảng cách linh hoạt */
+Không còn grid-template-columns: 200px 600px 200px
+
+Tiếng Đức dài → menu tự giãn, nếu hết chỗ thì rớt xuống dòng dưới thay vì tràn
+
+white-space: nowrap trên link → từ dài không bị ngắt giữa chừng
+
+flex-shrink: 0 trên logo → logo không bị co lại khi menu dài
+
+2. Dashboard — Grid "Bento" thật sự
+css
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 160px;
+    gap: 16px;                    /* gap thay margin lộn xộn */
+}
+.widget-large {
+    grid-column: span 2;
+    grid-row: span 2;             /* span 2×2 không cần fix height */
+}
+DOM phẳng: tất cả .widget là anh em ruột, không còn .column trung gian
+
+gap thay thế hoàn toàn margin: 5px — sạch hơn, không bị margin collapse
+
+Chart A tự động chiếm 2×2, các chart khác tự lấp vào chỗ trống
+
+Kết hợp Grid + Flex: .widget dùng display: flex bên trong để căn giữa icon + chữ — đây chính là câu trả lời cho câu hỏi vấn đáp số 1!
+
+3. Pricing — Bootstrap, 0 dòng CSS thuần
+html
+<div class="row g-4">
+    <div class="col-12 col-md-4">...</div>
+    <div class="col-12 col-md-4">...</div>
+    <div class="col-12 col-md-4">...</div>
+</div>
+col-12 → mobile: 1 cột (mỗi card full width)
+
+col-md-4 → từ 768px trở lên: 3 cột (mỗi card 4/12)
+
+g-4 → gap giữa các cột (Bootstrap dùng gap ngầm, không phải margin!)
+
+Trả lời câu hỏi col-sm-4 vs col-md-4:
+
+col-sm-4: áp dụng từ 576px trở lên
+
+col-md-4: áp dụng từ 768px trở lên
+
+Nếu dùng col-sm-4, trên tablet nhỏ (600px) đã là 3 cột → có thể quá chật
+
+col-md-4 an toàn hơn cho pricing vì tablet cần không gian thở
+
+layout_strategy.md — Bản giải trình (dưới 150 từ)
+markdown
+# Chiến lược Layout — MetricsHub
+
+**Nguyên tắc vàng: Grid làm layout tổng thể, Flexbox làm component chi tiết.**
+
+- **Navbar → Flexbox:** Đây là không gian 1D (một hàng ngang). Flexbox co giãn theo nội dung, nên khi đổi sang tiếng Đức, các mục tự động giãn hoặc rớt dòng thay vì tràn. Grid với cột fix cứng không làm được điều này.
+
+- **Dashboard → CSS Grid:** Đây là không gian 2D — widget cần span cả hàng lẫn cột (Chart A chiếm 2×2). Grid kiểm soát 2 chiều cùng lúc, cho phép DOM phẳng, không cần thẻ `.column` trung gian. Flexbox lồng nhau sẽ tạo "Div Soup".
+
+- **Pricing → Bootstrap:** Đây là lưới 12 cột chuẩn, cần tốc độ triển khai. Bootstrap có sẵn breakpoint và class `col-12 col-md-4`, không cần viết CSS thuần.
+
+**Kết hợp:** Widget nằm trong Grid nhưng dùng Flexbox bên trong để căn giữa nội dung — minh chứng hai công cụ bổ trợ nhau.
+ai_prompt_log.md — Nhật ký AI
+markdown
+# AI Prompt Log — MetricsHub Layout
+
+## Prompt 1: Phân tích 1D vs 2D
+**Hỏi:** "Khi một phần tử con phải chiếm chính xác 2 hàng và 2 cột đan xen với các phần tử nhỏ khác, nên chọn CSS Grid hay Flexbox? Tại sao Flexbox chật vật?"
+**Nhận được:** Flexbox chỉ kiểm soát 1 trục, muốn span 2×2 phải fix height và lồng nhiều lớp. Grid kiểm soát 2 trục, dùng `grid-column: span 2; grid-row: span 2;` không cần fix height.
+
+## Prompt 2: Khác biệt col-sm-4 vs col-md-4
+**Hỏi:** "Sự khác biệt giữa col-sm-4 và col-md-4 trong Bootstrap 5? Tại sao dùng Bootstrap thay vì tự viết CSS Grid cho 3 cột?"
+**Nhận được:** `sm` = 576px, `md` = 768px. Bootstrap có sẵn breakpoint, class tiện, component dựng sẵn — nhanh hơn tự viết media query.
+
+## Prompt 3: CSS Grid Bento Box
+**Hỏi:** "Cú pháp CSS Grid để tạo Bento Box: 1 hình vuông lớn 2×2 bên trái, 2 hình nhỏ bên phải?"
+**Nhận được:** Dùng `grid-template-columns: repeat(3, 1fr)` + `grid-column: span 2; grid-row: span 2;` cho widget lớn.
+
+## Prompt 4: gap thay margin
+**Hỏi:** "Thuộc tính gap hoạt động thế nào trong Grid và Flexbox? Có thay thế được margin không?"
+**Nhận được:** `gap` hoạt động cho cả Grid và Flexbox, không bị margin collapse, không cần margin cho phần tử cuối. Là cách hiện đại để tạo khoảng cách.
+
+## Prompt 5: Navbar wrap trên mobile
+**Hỏi:** "Làm sao dùng flex-wrap: wrap để Navbar tự đẩy menu xuống dòng dưới mà không che Logo?"
+**Nhận được:** Dùng `flex-wrap: wrap` + `flex-shrink: 0` cho logo + `white-space: nowrap` cho link.
+Checklist trước khi nộp
+□ index.html — Navbar dùng Flexbox, không còn grid-template-columns fix pixel
+□ index.html — Dashboard DOM phẳng, không còn .column trung gian
+□ index.html — Pricing dùng row + col-12 col-md-4
+□ style.css — Grid dùng span cho widget-large
+□ style.css — Dùng gap thay margin
+□ Test ở 375px, 768px, 1200px — không vỡ
+□ layout_strategy.md — dưới 150 từ
+□ ai_prompt_log.md — ghi ít nhất 3-5 prompt
+□ Nén thành .zip, nộp link GitHub
