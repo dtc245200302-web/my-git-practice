@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetricsHub Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========== NAVBAR — FLEXBOX ========== -->
+    <nav class="main-navbar">
+        <div class="nav-logo">MetricsHub</div>
+        <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">VeryLongGermanWordForDashboard</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="nav-profile">Profile</div>
+    </nav>
+
+    <!-- ========== DASHBOARD — CSS GRID (BENTO) ========== -->
+    <section class="dashboard">
+        <div class="widget widget-large">
+            <h3>Chart A</h3>
+            <p>Doanh thu tổng quan (span 2×2)</p>
+        </div>
+        <div class="widget">
+            <h3>Chart B</h3>
+            <p>Người dùng mới</p>
+        </div>
+        <div class="widget">
+            <h3>Chart C</h3>
+            <p>Tỉ lệ chuyển đổi</p>
+        </div>
+        <div class="widget">
+            <h3>Chart D</h3>
+            <p>Thời gian trên trang</p>
+        </div>
+    </section>
+
+    <!-- ========== PRICING — BOOTSTRAP 12 CỘT ========== -->
+    <section class="pricing container my-5">
+        <h2 class="text-center mb-4">Bảng giá</h2>
+        <div class="row g-4">
+            <div class="col-12 col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Gói Cơ bản</h5>
+                        <p class="card-text">199.000đ / tháng</p>
+                        <a href="#" class="btn btn-outline-primary">Chọn gói</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Gói Nâng cao</h5>
+                        <p class="card-text">499.000đ / tháng</p>
+                        <a href="#" class="btn btn-primary">Chọn gói</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Gói Doanh nghiệp</h5>
+                        <p class="card-text">Liên hệ</p>
+                        <a href="#" class="btn btn-outline-primary">Chọn gói</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
